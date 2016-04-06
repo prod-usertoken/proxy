@@ -3,13 +3,15 @@ PWD=$(pwd)
 
 echo $DATE
 echo "Starting all processes owned by $PWD ..."
+echo
+echo "npm set registry http://127.0.0.1:5080"
+echo "http://localhost:5080/_browse"
 
 npm config del registry;npm config del proxy;npm config del https-proxy
 
 source ~/.profile
 server=$(which local-npm)
 [ -z $server ] && ( npm config del registry;npm config del proxy;npm config del https-proxy;npm install -g local-npm; npm set ca null;npm set registry http://127.0.0.1:5080 )
-echo homepage : http://localhost:5080/_browse
 mkdir cache
 local-npm -d ./cache
 
