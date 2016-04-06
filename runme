@@ -14,5 +14,3 @@ server=$(which local-npm)
 [ -z $server ] && ( npm config del registry;npm config del proxy;npm config del https-proxy;npm install -g local-npm; npm set ca null;npm set registry http://127.0.0.1:5080 )
 mkdir cache
 local-npm -d ./cache
-
-npm config del registry;npm config del proxy;npm config del https-proxy
