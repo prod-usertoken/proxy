@@ -14,5 +14,6 @@ server=$(which local-npm)
 [ -z $server ] && npm install -g local-npm
 npm set registry http://127.0.0.1:5080
 npm set ca null
-mkdir cache
-local-npm -d cache --remote https://npm.usertoken.com
+mv cache /tmp;mkdir cache
+#local-npm -d cache --remote https://npm.usertoken.com
+local-npm -d cache
