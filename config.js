@@ -1,6 +1,6 @@
 var path = require('path'),
     homePath = path.normalize(process.env[(process.platform == 'win32') ? 'USERPROFILE' : 'HOME']),
-    configPath = __dirname + '/..';
+    configPath = __dirname;
 
 console.log('homepath: ', homePath, ' configpath: ', configPath)
 
