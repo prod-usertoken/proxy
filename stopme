@@ -3,5 +3,6 @@ PWD=local-npm
 
 echo $DATE
 ps -ef | grep -v grep | grep $PWD | awk '{ print $2 }' | xargs kill -9
-npm config del progress;npm config del registry;npm config del proxy;npm config del https-proxy
+npm config del registry;npm config del proxy;npm config del https-proxy; \
+npm config del strict-ssl;npm set progress=true
 echo "Stopping all processes owned by $PWD ..."
